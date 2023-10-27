@@ -1,72 +1,56 @@
-﻿int number = 20051;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
+﻿using ChallengeApp;
 
-int[] numbers = new int[10];
+Employee emp1 = new Employee("Tomasz", "Kowalski", 30);
+Employee emp2 = new Employee("Marcin", "Wrobel", 22);
+Employee emp3 = new Employee("Martyna", "Nowakowska", 19);
 
-numbers[0] = 0;
-numbers[1] = 0;
-numbers[2] = 0;
-numbers[3] = 0;
-numbers[4] = 0;
-numbers[5] = 0;
-numbers[6] = 0;
-numbers[7] = 0;
-numbers[8] = 0;
-numbers[9] = 0;
+emp1.AddScore(5);
+emp2.AddScore(2);
+emp3.AddScore(2);
 
-int i = 0;
-foreach (char letter in letters)
+emp1.AddScore(7);
+emp2.AddScore(10);
+emp3.AddScore(6);
+
+emp1.AddScore(8);
+emp2.AddScore(9);
+emp3.AddScore(10);
+
+emp1.AddScore(8);
+emp2.AddScore(2);
+emp3.AddScore(1);
+
+emp1.AddScore(2);
+emp2.AddScore(10);
+emp3.AddScore(5);
+
+
+var ResultEmp1 = emp1.Result;
+var ResultEmp2 = emp2.Result;
+var ResultEmp3 = emp3.Result;
+
+var Emp1Data = ($"{emp1.Name} {emp1.Surname} lat {emp1.Age}, wynik {ResultEmp1}");
+var Emp2Data = ($"{emp2.Name} {emp2.Surname} lat {emp2.Age}, wynik {ResultEmp2}");
+var Emp3Data = ($"{emp3.Name} {emp3.Surname} lat {emp3.Age}, wynik {ResultEmp2}");
+
+
+List<int> SumUp = new List<int>();
+SumUp.Add(ResultEmp1);
+SumUp.Add(ResultEmp2);
+SumUp.Add(ResultEmp3);
+
+int TopValue = SumUp.Max();
+
+
+if (TopValue == ResultEmp1)
 {
-
-    if (letter == '0')
-    {
-        numbers[0]++;
-    }
-    else if (letter == '1')
-    {
-        numbers[1]++;
-    }
-    else if (letter == '2')
-    {
-        numbers[2]++;
-    }
-    else if (letter == '3')
-    {
-        numbers[3]++;
-    }
-    else if (letter == '4')
-    {
-        numbers[4]++;
-    }
-    else if (letter == '5')
-    {
-        numbers[5]++;
-    }
-    else if (letter == '6')
-    {
-        numbers[6]++;
-    }
-    else if (letter == '7')
-    {
-        numbers[7]++;
-    }
-    else if (letter == '8')
-    {
-        numbers[8]++;
-    }
-    else if (letter == '9')
-    {
-        numbers[9]++;
-    }
+    Console.WriteLine(Emp1Data);
 }
-foreach (var num in numbers)
+else if (TopValue == ResultEmp2)
 {
-    if (i == 0)
-    {
-        Console.WriteLine($"Wynik dla {number}:");
-    }
-    Console.WriteLine($"{i}> {num}");
-    i++;
+    Console.WriteLine(Emp2Data);
 }
-
+else
+{
+    Console.WriteLine(Emp3Data);
+}
