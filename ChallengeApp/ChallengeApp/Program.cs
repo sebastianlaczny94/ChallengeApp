@@ -1,4 +1,5 @@
 ﻿using ChallengeApp;
+using System.Reflection.Metadata;
 
 Employee emp1 = new Employee("Tomasz", "Kowalski", 30);
 Employee emp2 = new Employee("Marcin", "Wrobel", 22);
@@ -16,7 +17,7 @@ emp1.AddScore(8);
 emp2.AddScore(9);
 emp3.AddScore(10);
 
-emp1.AddScore(8);
+emp1.AddScore(100);
 emp2.AddScore(2);
 emp3.AddScore(1);
 
@@ -25,32 +26,23 @@ emp2.AddScore(10);
 emp3.AddScore(5);
 
 
-var ResultEmp1 = emp1.Result;
-var ResultEmp2 = emp2.Result;
-var ResultEmp3 = emp3.Result;
-
-var Emp1Data = ($"{emp1.Name} {emp1.Surname} lat {emp1.Age}, wynik {ResultEmp1}");
-var Emp2Data = ($"{emp2.Name} {emp2.Surname} lat {emp2.Age}, wynik {ResultEmp2}");
-var Emp3Data = ($"{emp3.Name} {emp3.Surname} lat {emp3.Age}, wynik {ResultEmp2}");
-
-
-List<int> SumUp = new List<int>();
-SumUp.Add(ResultEmp1);
-SumUp.Add(ResultEmp2);
-SumUp.Add(ResultEmp3);
-
-int TopValue = SumUp.Max();
-
-
-if (TopValue == ResultEmp1)
+List<Employee> Users = new List<Employee>()
 {
-    Console.WriteLine(Emp1Data);
-}
-else if (TopValue == ResultEmp2)
+    emp1,emp2,emp3
+};
+
+
+
+int maxResult = -1;
+Employee EmpMaxValue = null;
+foreach (var user in Users)
 {
-    Console.WriteLine(Emp2Data);
+    if(user.Result > maxResult )
+    {
+        EmpMaxValue = user;
+        maxResult = user.Result;  
+    }
+    
 }
-else
-{
-    Console.WriteLine(Emp3Data);
-}
+
+Console.WriteLine($"{maxResult}, {EmpMaxValue.Name}");
