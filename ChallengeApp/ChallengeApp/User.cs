@@ -37,4 +37,3 @@ namespace ChallengeApp // przestrzen nazw
     }
 }
 
-

@@ -1,4 +1,5 @@
 ﻿using ChallengeApp;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection.Metadata;
 
 Employee emp1 = new Employee("Tomasz", "Kowalski", 30);
