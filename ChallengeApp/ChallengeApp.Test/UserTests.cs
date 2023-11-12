@@ -2,7 +2,7 @@ using System.Reflection.Metadata;
 
 namespace ChallengeApp.Test
 {
-    public class Tests
+    public class Test1
     {
 
 
@@ -23,6 +23,7 @@ namespace ChallengeApp.Test
             Assert.AreEqual(0, result);
 
         }
+
     }
 }
 
