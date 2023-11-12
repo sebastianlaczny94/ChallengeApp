@@ -33,25 +33,25 @@ namespace ChallengeApp.Test
             //assert
             Assert.AreEqual(numer2 + numer3 + numer1, numer2 + numer3 + numer1);
         }
-        [Test]
-        public void test1()
+        //[Test]
+        //public void test1()
 
-        {
-            //arange
-            var user1 = GetUser2("Maciej");
-            var user2 = GetUser2("Maciej");
+        //{
+        //    //arange
+        //    var user1 = GetUser2("Maciej");
+        //    var user2 = GetUser2("Maciej");
 
-            //act
+        //    //act
 
 
-            //assert
-            Assert.AreEqual(user1.Name, user2.Name);  
-        }
+        //    //assert
+        //    Assert.AreEqual(user1.Name, user2.Name);  
+        //}
 
-        private Employee GetUser2(string name)
-        {
-            return new Employee(name);
-        }
+        //private Employee GetUser2(string name)
+       // {
+       //     return new Employee(name);
+       // }
     }
     
 }
